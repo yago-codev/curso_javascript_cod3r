@@ -49,3 +49,5 @@ console.log(aprovados);
 // adicionando elementos em posições específicas sem remover nada do array:
 aprovados.splice(1, 0, 'Elemento2', 'Elemento3');
 console.log(aprovados);
+
+aprovados = ['Bia', 'Carlos', 'Ana'];
