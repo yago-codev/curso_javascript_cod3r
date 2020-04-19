@@ -15,7 +15,8 @@ function imprimirNomeGritado(obj) {
     console.log(obj.name.toUpperCase() + "!!!");
   } catch (err) {
     tratarErroELancar(err);
-    // o bloco finally será executado independente do erro ocorrer. se tudo der certo, ele também será executado
+    // o bloco finally será executado independente do erro ocorrer. 
+    // se tudo der certo, ele também será executado
   } finally {
     console.log(
       "sentença de código sendo executada apesar do erro ter acontecido!"
