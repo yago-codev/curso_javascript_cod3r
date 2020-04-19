@@ -13,3 +13,4 @@ function teste1(num) {
 
 teste1(6);
 teste1(8);
+
