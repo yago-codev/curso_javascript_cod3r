@@ -1,43 +1,35 @@
-/*
-  O JS trata as funções como cidadãos de primeira linha (first-class object/citizens)
-  Isso significa que conseguimos passar uma função como parâmetro pra outra função, 
-  conseguimos retornar uma função dentro de outra função, 
-  conseguimos declarar uma função dentro de outra função, 
-  conseguimos criar funções de forma literal, que é a forma padrão de se criar funções,
-  conseguimos armazenar função dentro de variáveis...
-  Isso acaba por abrir um leque de possibilidades imenso.
-*/
+// Função em JS é First-Class Object (Citizens)
+// No paradigma funcional isso é nomeado como "High-Order Function"
 
-// criando função de forma literal 
-function fun1 () { }
+// Alguns Tipos de Usos de Funções:
 
-// criando função, armazenando-a em uma variável
-const fun2 = function () {  }
+// Criando Função de Forma Literal:
+function fun1() { }
 
-// criando função em um array
-const array = [ function ( a, b ) { return a + b; }, fun1, fun2 ];
-console.log(array[0](2, 3));
+// Armazenando Função em Variável:
+const fun2 = function () { }
 
-// armazenando função em atributo de um objeto
-const obj = {};
-obj.falar = function () { return 'opa' }
+// Armazenando Função em Array:
+const array = [function (a, b) { return a + b }, fun1, fun2]
+console.log(array[0](2, 3))
+
+// Armazenando Função em um Atributo de Objeto:
+const obj = {}
+obj.falar = function () { return 'Opa' };
 console.log(obj.falar());
 
-// passar função como parâmetro em outra função
-function run (fun) {
-  fun ();
+// Passando Função como Parâmetro pra outra Função:
+function run(fun) {
+  fun()
 }
-run( function () { console.log('Executando...'); });
+run(function () { console.log('Executando ...') })
 
-// retornando função dentro de outra função
-function soma ( a, b ) {
-  return function ( c ) {
-    console.log(a + b + c);
+// Retornando Função dentro de Função:
+function soma(a, b) {
+  return function (c) {
+    console.log(a + b + c)
   }
 }
-soma(2, 3)(4);
-
-// outra forma de executar
-const cincoMais = soma(2, 3);
-cincoMais(4);
-
+soma(1, 2)(3)
+const cincoMais = soma(2, 3)
+cincoMais(4)
